@@ -10,17 +10,14 @@ public final class BuildHeapTopDown {
   // Rearranges arr into a max-heap by swimming each element up in turn.
   // Assumes arr is not null.
   public static void buildHeapTopDown(int[] arr) {
-    for (int i = 1; i < arr.length; i++) {
-      swim(arr, i);
-    }
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Moves arr[i] up until it is no larger than its parent.
   private static void swim(int[] arr, int i) {
-    while (i > 0 && arr[i] > arr[parent(i)]) {
-      swap(arr, i, parent(i));
-      i = parent(i);
-    }
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // The parent of the node at index i. Pre: i > 0.

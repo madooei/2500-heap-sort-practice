@@ -13,14 +13,7 @@ public final class TreeSort {
   // and reading them back in order. Assumes arr is not null and its values are
   // distinct.
   public static void treeSort(int[] arr) {
-    BinarySearchTree<Integer> tree = new BinarySearchTree<>();
-    for (int value : arr) {
-      tree.add(value);
-    }
-    int i = 0;
-    for (int value : tree) {
-      arr[i] = value;
-      i++;
-    }
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 }

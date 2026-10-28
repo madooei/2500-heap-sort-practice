@@ -21,7 +21,7 @@ public class TreeSortTest {
   }
 
   @Test
-  public void problemExampleGetsSorted() {
+  public void unsortedArrayGetsSorted() {
     int[] arr = {4, 2, 6, 1, 3, 5};
     TreeSort.treeSort(arr);
     assertElements(new int[] {1, 2, 3, 4, 5, 6}, arr);

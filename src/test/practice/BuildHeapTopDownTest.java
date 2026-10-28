@@ -29,14 +29,14 @@ public class BuildHeapTopDownTest {
   }
 
   @Test
-  public void chapterExampleBecomesAMaxHeap() {
+  public void unsortedArrayBecomesAMaxHeap() {
     int[] arr = {5, 3, 8, 1, 9, 2};
     BuildHeapTopDown.buildHeapTopDown(arr);
     assertTrue(isMaxHeap(arr));
   }
 
   @Test
-  public void chapterExampleGivesTheTracedArrangement() {
+  public void unsortedArrayGetsTheTopDownArrangement() {
     int[] arr = {5, 3, 8, 1, 9, 2};
     BuildHeapTopDown.buildHeapTopDown(arr);
     assertElements(new int[] {9, 8, 5, 1, 3, 2}, arr);

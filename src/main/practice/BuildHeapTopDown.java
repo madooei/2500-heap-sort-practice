@@ -7,8 +7,7 @@ public final class BuildHeapTopDown {
     // This class should not be instantiated!
   }
 
-  // Rearranges arr into a max-heap by swimming each element up in turn.
-  // Assumes arr is not null.
+  // Rearranges arr into a max-heap. Assumes arr is not null.
   public static void buildHeapTopDown(int[] arr) {
     for (int i = 1; i < arr.length; i++) {
       swim(arr, i);

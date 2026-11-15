@@ -13,7 +13,7 @@ public final class BuildHeapTopDown {
     throw new UnsupportedOperationException("TODO: Implement me");
   }
 
-  // Moves arr[i] up until it is no larger than its parent.
+  // Moves arr[i] up until it reaches the root or is no larger than its parent.
   private static void swim(int[] arr, int i) {
     // TODO: Implement me
     throw new UnsupportedOperationException("TODO: Implement me");

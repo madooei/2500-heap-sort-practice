@@ -14,7 +14,7 @@ public final class BuildHeapTopDown {
     }
   }
 
-  // Moves arr[i] up until it is no larger than its parent.
+  // Moves arr[i] up until it reaches the root or is no larger than its parent.
   private static void swim(int[] arr, int i) {
     while (i > 0 && arr[i] > arr[parent(i)]) {
       swap(arr, i, parent(i));

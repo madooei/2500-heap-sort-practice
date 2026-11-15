@@ -1,10 +1,14 @@
 package practice;
 
+import java.lang.reflect.Method;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/** Tests for the problem of building a max-heap top-down. */
+/**
+ * Tests for the problem of building a max-heap top-down, including its private
+ * swim helper through reflection.
+ */
 public class BuildHeapTopDownTest {
 
   @Test
@@ -19,6 +23,27 @@ public class BuildHeapTopDownTest {
     int[] arr = {7};
     BuildHeapTopDown.buildHeapTopDown(arr);
     assertEquals(7, arr[0]);
+  }
+
+  @Test
+  public void swimLeavesASmallerValueInPlace() {
+    int[] arr = {9, 5, 8, 1, 3, 2};
+    callSwim(arr, 5);
+    assertElements(new int[] {9, 5, 8, 1, 3, 2}, arr);
+  }
+
+  @Test
+  public void swimMovesALargerValueAboveItsParent() {
+    int[] arr = {9, 5, 3, 1, 4, 6};
+    callSwim(arr, 5);
+    assertElements(new int[] {9, 5, 6, 1, 4, 3}, arr);
+  }
+
+  @Test
+  public void swimMovesALeafUpMoreThanOneLevel() {
+    int[] arr = {9, 5, 8, 1, 10, 2};
+    callSwim(arr, 4);
+    assertElements(new int[] {10, 9, 8, 1, 5, 2}, arr);
   }
 
   @Test
@@ -70,6 +95,17 @@ public class BuildHeapTopDownTest {
     assertEquals(expected.length, actual.length);
     for (int i = 0; i < expected.length; i++) {
       assertEquals(expected[i], actual[i]);
+    }
+  }
+
+  // Calls the private static method swim(int[], int) of BuildHeapTopDown.
+  private static void callSwim(int[] arr, int i) {
+    try {
+      Method method = BuildHeapTopDown.class.getDeclaredMethod("swim", int[].class, int.class);
+      method.setAccessible(true);
+      method.invoke(null, arr, i);
+    } catch (ReflectiveOperationException e) {
+      throw new RuntimeException(e);
     }
   }
 }

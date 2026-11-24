@@ -43,7 +43,7 @@ code/
 - `scripts/test.sh practice.TreeSortTest` — compiles everything and runs only that test class.
 - `scripts/run.sh demo.TreeSortDemo` — compiles everything and runs that one demo. Every problem class has its own demo, `<Class>Demo`.
 
-## What's here
+## Contents
 
 - `practice.BuildHeapTopDown` — `buildHeapTopDown`, which rearranges an array into a max-heap by swimming each element up into the heap formed by the slots before it.
 - `practice.TreeSort` — `treeSort`, which sorts an array of distinct values by adding them to a `BinarySearchTree` and iterating the tree in order.
